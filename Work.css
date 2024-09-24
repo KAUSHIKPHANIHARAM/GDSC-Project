@@ -1,24 +1,22 @@
-/* Main container: for the products and cart displayed in rows and columns */
+ 
 .work-container {
     display: grid;
     grid-template-columns: 70% 28%;
-    /* Product list 70%, Cart 28% */
     gap: 2%;
     padding: 20px;
     align-items: flex-start;
-    /* Align products and cart to the top */
+  
 }
 
-/* Product list grid: 3 products per row */
+ 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 equal columns for products */
-    gap: 20px;
-    /* Space between products */
+     gap: 20px;
+  
 }
 
-/* Each product card */
+ 
 .card {
     background-color: white;
     padding: 15px;
@@ -37,21 +35,19 @@
     margin: 0 auto 15px;
 }
 
-/* Cart section to be displayed in the second column */
+ 
 .cart-section {
     max-height: 100vh;
     position: sticky;
-    /* Make the cart sticky as the user scrolls */
     top: 20px;
     overflow-y: auto;
-    /* Independent scrolling if the cart is too long */
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Each cart item inside the cart section */
+ 
 .cart-container {
     display: flex;
     flex-direction: column;
@@ -76,7 +72,7 @@
     margin: 5px 0;
 }
 
-/* Remove button in the cart */
+ 
 .cart-container .btn-warning {
     align-self: center;
     margin-top: 10px;
