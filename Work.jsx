@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Work.css'; // Import the CSS file
 import Cart from './Cart';
-import CartSummary from './CartSummary'; // Import the CartSummary component
+import CartSummary from './CartSummary';  
 
 function Work() {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
+   
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
@@ -14,7 +14,7 @@ function Work() {
             .then(data => setProducts(data));
     }, []);
 
-    // Function to add item to the cart or update the quantity if it already exists
+ 
     function addCart(item) {
         setCart(prevCart => {
             const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
@@ -30,7 +30,7 @@ function Work() {
         });
     }
 
-    // Function to remove an item from the cart
+  
     function removeCart(id) {
         setCart(cart => {
             const existingItem = cart.find(item => item.id === id);
@@ -45,10 +45,7 @@ function Work() {
             }
         });
     }
-    const filteredProducts = products.filter(product =>
-        product.title.toLowerCase().includes(searchQuery.toLowerCase()) || // Search by title
-        product.category.toLowerCase().includes(searchQuery.toLowerCase()) // Search by category
-    );
+    
 
     return (
         <div className="work-container">
@@ -57,10 +54,7 @@ function Work() {
                     <h1 className='text-white'>E-Commerce Platform</h1>
                     <input
                         type="text"
-                        placeholder="Search products..."
-                        className="search-input"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)} // Update search query
+                        placeholder="Search products..." 
                     />
                 </div>
                 <div className="grid-container">
